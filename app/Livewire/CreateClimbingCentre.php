@@ -1,15 +1,19 @@
 <?php
 
 namespace App\Livewire;
-
+use Livewire\Attributes\Validate; 
 use App\Models\ClimbingCentre;
 use Livewire\Component;
 
 class CreateClimbingCentre extends Component
 {
 
+    #[Validate('required|min:3')] 
     public $name = '';
+
+    #[Validate('required|min:3')] 
     public $location = '';
+
     public $indoors = false;
 
     public function render()
@@ -19,10 +23,11 @@ class CreateClimbingCentre extends Component
 
     public function save()
     {
+        $this->validate(); 
         $flight = ClimbingCentre::create([
-            'name' => $this->$name,
-            'location' => $this->$location,
-            'indoors' => $this->$indoors,
+            'name' => $this->name,
+            'location' => $this->location,
+            'indoors' => $this->indoors,
         ]);
     }
     
