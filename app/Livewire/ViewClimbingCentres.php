@@ -13,6 +13,6 @@ class ViewClimbingCentres extends Component
 
     public function render()
     {
-        return view('livewire.view-climbing-centres', ['climbingcentres'=> ClimbingCentre::paginate(1)]);
+        return view('livewire.view-climbing-centres', ['climbingcentres'=> ClimbingCentre::paginate(20)]);
     }
 }

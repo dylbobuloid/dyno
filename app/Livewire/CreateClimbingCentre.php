@@ -24,7 +24,7 @@ class CreateClimbingCentre extends Component
     public function save()
     {
         $this->validate(); 
-        $flight = ClimbingCentre::create([
+        $gym = ClimbingCentre::create([
             'name' => $this->name,
             'location' => $this->location,
             'indoors' => $this->indoors,
